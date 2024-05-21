@@ -88,3 +88,18 @@ $cubic: cubic-bezier(0.77, 0, 0.175, 1);
     transform: translateY(50px);
   }
 }
+
+@keyframes upDown2 {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

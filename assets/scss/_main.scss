@@ -49,6 +49,7 @@ a {
     font-size: 90px;
     letter-spacing: 5px;
     color: #65aedc;
+    text-align: center;
   }
 }
 
@@ -84,8 +85,8 @@ a {
 .button-link {
   -webkit-perspective: 240px;
   perspective: 240px;
-  display: block;
   @include flex(unset, center, unset);
+  width: fit-content;
   flex-direction: column;
   &:hover {
     .top {
@@ -107,6 +108,7 @@ a {
       font-family: $font-title;
       color: #000;
       font-size: 40px;
+      text-align: center;
     }
   }
   .bottom {
@@ -145,9 +147,10 @@ a {
   .banner-image {
     width: 35%;
     position: relative;
-    img {
+    > img {
       position: relative;
       z-index: 1;
+      filter: drop-shadow(0 0 30px rgba(140, 203, 244, 0.6));
       animation: upDown ease-in-out 7s infinite alternate-reverse;
     }
     .decor-el {
@@ -176,6 +179,11 @@ a {
     }
     .title {
       transform: rotate(-6deg);
+      text-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.3);
+      @include flex(unset, center, 0);
+      span {
+        transition: all ease 0.2s;
+      }
     }
   }
 
@@ -183,5 +191,62 @@ a {
     position: relative;
     margin-top: 200px;
     margin-bottom: 20px;
+  }
+}
+
+.supply {
+  height: 120vh;
+  background: url(../images/comic-bg.png) center no-repeat;
+  background-size: cover;
+  @include flex(unset, center, unset);
+  .supply-wrapper {
+    @include flex(space-around, center, 10px);
+    position: relative;
+  }
+  .content-box {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    &:nth-child(2) {
+      right: 0;
+      bottom: 0;
+      left: initial;
+      top: initial;
+    }
+  }
+  .supply-content {
+    width: 40%;
+
+    .heading-block {
+      .title {
+        span {
+          font-size: 45px;
+        }
+        font-size: 60px;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 2px;
+        -webkit-text-stroke-color: #000;
+      }
+    }
+    .button-link {
+      margin: 0 auto;
+      .top {
+        width: 200px;
+        height: 100px;
+        aspect-ratio: unset;
+      }
+      .bottom {
+        width: 236px;
+        height: 40px;
+        aspect-ratio: unset;
+      }
+    }
+  }
+
+  .supply-image {
+    max-width: 50%;
+    img {
+      animation: upDown ease-in-out 5s infinite alternate-reverse;
+    }
   }
 }
