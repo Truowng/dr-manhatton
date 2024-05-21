@@ -159,11 +159,11 @@ a {
 }
 .button-link .bottom {
   width: 148px;
-  aspect-ratio: 4/1;
+  aspect-ratio: 5/1;
   background-color: #c24239;
   border: 2px solid #000;
   border-top: 0;
-  margin-top: -20px;
+  margin-top: -15px;
 }
 .button-link.yellow:hover .top {
   background-color: #c6963b;
@@ -241,6 +241,8 @@ a {
 }
 
 .supply {
+  margin-top: 5px;
+  border-top: 2px solid #000;
   height: 120vh;
   background: url(../images/comic-bg.png) center no-repeat;
   background-size: cover;
@@ -251,7 +253,7 @@ a {
 }
 .supply .supply-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   position: relative;
@@ -288,12 +290,43 @@ a {
   aspect-ratio: unset;
 }
 .supply .supply-content .button-link .bottom {
-  width: 236px;
+  width: 238px;
   height: 40px;
   aspect-ratio: unset;
+  margin-top: -14px;
 }
 .supply .supply-image {
   max-width: 50%;
+  position: relative;
+}
+.supply .supply-image .decor-wrapper {
+  position: absolute;
+  width: 400px;
+  left: -120px;
+  top: 15%;
+  aspect-ratio: 1;
+}
+.supply .supply-image .decor-wrapper .decor-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.supply .supply-image .decor-wrapper .decor-el:nth-child(1) {
+  mix-blend-mode: screen;
+}
+.supply .supply-image .decor-wrapper .decor-el:nth-child(2) {
+  width: 60px;
+  top: 51%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+.supply .supply-image > .decor-el {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .supply .supply-image img {
   animation: upDown ease-in-out 5s infinite alternate-reverse;
