@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Bad Comic Regular";
+  src: url(../fonts/BadComic-Regular.ttf);
+}
+@font-face {
+  font-family: "Badabb";
+  src: url(../fonts/BadAbb.ttf);
+}
+@font-face {
+  font-family: "Bad Comic Italic";
+  src: url(../fonts/BadComic-Italic.ttf);
+}
+
+$font-body: "Bad Comic Regular";
+$font-body-i: "Bad Comic Italic";
+$font-title: "Badabb";
+
+//COLOR
+$black: #000;
+$white: #fff;
+$blue: #1c417e;
+
+// FUNCTION
+@mixin flex($j, $a, $g) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  gap: $g;
+}
+
+$cubic: cubic-bezier(0.77, 0, 0.175, 1);
+
+// START BREAKPOINT VARIABLES
+@mixin extra-desktop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media only screen and (max-width: 1399px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin landscape-phone {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin extra-mobile {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+// END BREAKPOINT VARIABLES
+
+// ANIMATION
+@keyframes upDown {
+  0% {
+    transform: translateY(50px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
+}

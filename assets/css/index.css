@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Bad Comic Regular";
+  src: url(../fonts/BadComic-Regular.ttf);
+}
+@font-face {
+  font-family: "Badabb";
+  src: url(../fonts/BadAbb.ttf);
+}
+@font-face {
+  font-family: "Bad Comic Italic";
+  src: url(../fonts/BadComic-Italic.ttf);
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Bad Comic Italic";
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading-block {
+  position: relative;
+}
+.heading-block .title {
+  font-family: "Badabb";
+  -webkit-text-stroke: 3px;
+  -webkit-text-stroke-color: #fff;
+  font-size: 90px;
+  letter-spacing: 5px;
+  color: #65aedc;
+}
+
+.content-box {
+  position: absolute;
+  max-width: 500px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #fff;
+  z-index: 0;
+  padding: 20px;
+}
+.content-box::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background-color: #97d1f6;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  border: 2px solid #000;
+}
+.content-box .text {
+  font-family: "Bad Comic Italic";
+  color: #000;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  gap: 40px;
+}
+
+.button-link {
+  perspective: 240px;
+  display: block;
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  gap: unset;
+  flex-direction: column;
+}
+.button-link:hover .top {
+  transform: rotateX(50deg) translateZ(-40px) scale(1.1);
+  background-color: #c24239;
+}
+.button-link:hover .bottom {
+  visibility: hidden;
+}
+.button-link .top {
+  width: 120px;
+  aspect-ratio: 1;
+  border: 2px solid #000;
+  background-color: #f94b41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: unset;
+  transform: rotateX(50deg);
+}
+.button-link .top .text {
+  font-family: "Badabb";
+  color: #000;
+  font-size: 40px;
+}
+.button-link .bottom {
+  width: 148px;
+  aspect-ratio: 4/1;
+  background-color: #c24239;
+  border: 2px solid #000;
+  border-top: 0;
+  margin-top: -20px;
+}
+.button-link.yellow:hover .top {
+  background-color: #c6963b;
+}
+.button-link.yellow .top {
+  background-color: #f9c541;
+}
+.button-link.yellow .bottom {
+  background-color: #c6963b;
+}
+
+.banner {
+  background: url(../images/space.png) center no-repeat;
+  background-size: cover;
+  height: 120vh;
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  gap: unset;
+}
+.banner .banner-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+}
+.banner .banner-image {
+  width: 35%;
+  position: relative;
+}
+.banner .banner-image img {
+  position: relative;
+  z-index: 1;
+  animation: upDown ease-in-out 7s infinite alternate-reverse;
+}
+.banner .banner-image .decor-el {
+  position: absolute;
+  width: 100%;
+  top: -70px;
+  left: 0;
+  z-index: 0;
+  mix-blend-mode: lighten;
+}
+.banner .banner-content {
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  gap: unset;
+  flex-direction: column;
+}
+.banner .heading-block .decor-el {
+  position: absolute;
+  top: -200%;
+  left: 0%;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+.banner .heading-block .title {
+  transform: rotate(-6deg);
+}
+.banner .content-box {
+  position: relative;
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
