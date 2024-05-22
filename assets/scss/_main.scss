@@ -12,6 +12,7 @@ body {
 body {
   font-size: 16px;
   font-family: $font-body-i;
+  line-height: 1.5;
 }
 
 ul,
@@ -231,7 +232,7 @@ a {
       }
     }
     .button-link {
-      margin: 0 auto;
+      margin: 30px auto 0;
       .top {
         width: 200px;
         height: 100px;
@@ -280,6 +281,95 @@ a {
     }
     img {
       animation: upDown ease-in-out 5s infinite alternate-reverse;
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include tablet {
+  .banner {
+    height: unset;
+    padding: 100px 0;
+    .banner-wrapper {
+      flex-direction: column;
+    }
+    .banner-image {
+      width: 70%;
+    }
+    .banner-content {
+      .heading-block {
+        .decor-el {
+          display: none;
+        }
+      }
+    }
+    .content-box {
+      margin-top: 100px;
+    }
+  }
+
+  .supply {
+    height: unset;
+    padding: 120px 0;
+    .supply-wrapper {
+      flex-direction: column-reverse;
+      padding: 120px 0;
+      gap: 100px;
+    }
+    .supply-image {
+      width: 80%;
+      max-width: unset;
+    }
+    .supply-content {
+      width: 100%;
+    }
+  }
+}
+
+@include landscape-phone {
+}
+
+@include extra-mobile {
+  .button-wrapper {
+    gap: 20px;
+  }
+  .content-box {
+    .text {
+      font-size: 14px;
+    }
+  }
+  .banner {
+    padding: 80px 0;
+    .banner-content {
+      width: 100%;
+    }
+    .content-box {
+      width: 100%;
+    }
+    .heading-block {
+      .title {
+        font-size: 55px;
+      }
+    }
+    .banner-image {
+      width: 100%;
+    }
+  }
+  .supply {
+    padding: 80px 0;
+    .supply-wrapper {
+      gap: 50px;
+    }
+    .supply-image {
+      width: 100%;
+    }
+    .supply-content {
+      .heading-block {
+        .title {
+          font-size: 42px;
+        }
+      }
     }
   }
 }
